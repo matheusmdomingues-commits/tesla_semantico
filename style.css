@@ -1,0 +1,105 @@
+ :root{
+            --primary: #990000;
+            --primary-dark: #b30000;
+            --bg: #f4f4f4;
+            --text: #333333;
+            --accent: #d4af37;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{ background:var(--bg); font-family:Arial, Helvetica, sans-serif; color:var(--text); }
+
+        header.site-header{
+            background-color:var(--primary);
+            height:10vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        nav.site-nav{ display:flex; align-items:center; }
+
+        .btnnav{
+            border-radius:8px;
+            margin-left:10px;
+            height:30px;
+            width:130px;
+            background:transparent;
+            color:white;
+            border:1px solid rgba(255,255,255,0.15);
+            cursor:pointer;
+        }
+
+        .btnnav:hover{
+            background-color:var(--primary-dark);
+            color:white;
+        }
+
+        .btnfooter{
+            margin-left:10px;
+            height:50px;
+            width:150px;
+            background-color:rgba(153,0,0,0.08);
+            color:var(--primary);
+            border:0;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            cursor:pointer;
+            gap:10px;
+            border-radius:6px;
+        }
+
+        .btnfooter:hover{
+            background-color:white;
+            color:var(--primary);
+        }
+
+        a{ text-decoration:none; }
+
+        .card{
+            border:1px solid #ddd;
+            color:var(--text);
+            height:100%;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            background:transparent;
+            padding:12px;
+            border-radius:6px;
+        }
+
+        /* o @media serve para alterar as propriedades das tags com a base no tamanho do dispositivo
+        para garantir a responsividade do site, temos que verificar como fica a etilização
+        em varios tamanhos de telas diferentes, pode ser que no computador fique ok, porem quando acessado
+        pelo celular o site quebre. Nesse caso sera necessario aplicar ajustes no tamanho de tela com
+        o @media()
+
+        * Usamos o "important" para forçar a estilização em uma tag, como a tag pode ter id e varias classes
+        o html e css precisam saber qual estilo aplicar, forçamos isso usando o !important no final do atributo
+         */
+
+        @media(max-width:750px){
+            button{
+                width: 50px!important;
+                height: 30px!important;
+            }
+        }
+        main.site-main{ min-height:70vh; }
+
+        section.hero{ background-color:#ffffff; height:40%; display:flex; justify-content:center; align-items:center; flex-direction:column; padding:30px; }
+        .hero h1{ color:var(--primary); margin-bottom:8px; }
+        .hero p{ color:var(--text); line-height:1.6; }
+
+        section.compare{ background-color:transparent; height:60%; display:flex; gap:0; padding:20px; }
+
+        .col-left{ width:50%; height:100%; background-color:#f9f3f3; padding:18px; }
+        .col-right{ width:50%; height:100%; background-color:#efefef; padding:18px; }
+
+        footer.site-footer{ background-color:#5a5a5a; height:20vh; display:flex; align-items:center; justify-content:center; }
